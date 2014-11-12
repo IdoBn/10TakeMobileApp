@@ -2,6 +2,7 @@
 
 	function AuthCtrl(log) {
 		log.debug('auth ctrl');
+		this.title = 'Auth Title';
 	}
 		AuthCtrl.$inject = ['$log'];
 

@@ -1,3 +1,14 @@
-<ion-content>
-  Sign In!
+<ion-content scroll="false">
+  <div class="list">
+	  <label class="item item-input">
+	    <span class="input-label">Email</span>
+	    <input type="email" ng-model='signIn.user.email'>
+	  </label>
+	  <label class="item item-input">
+	    <span class="input-label">Password</span>
+	    <input type="password" ng-model='signIn.user.password'>
+	  </label>
+	  <button class='button button-block button-positive' ng-click='signIn.handleSignIn(signIn.user)'>Sign In</button>
+	</div>
 </ion-content>
+

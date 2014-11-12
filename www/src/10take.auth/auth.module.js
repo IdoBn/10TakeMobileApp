@@ -11,17 +11,26 @@
 	function Config(stateProvider, urlRouterProvider, authProvider) {
 		stateProvider
 			.state('auth', {
-					'abstract': true,
-					url: '/auth',
-					templateUrl: 'src/10take.auth/auth.html',
-					controller: 'AuthCtrl as auth'
-				})
+				'abstract': true,
+				url: '/auth',
+				templateUrl: 'src/10take.auth/auth.html',
+				controller: 'AuthCtrl as auth'
+			})
 			.state('auth.signIn', {
 				url: '/signIn',
 				views: {
-					'signIn': {
+					'auth': {
 						templateUrl: 'src/10take.auth/signIn/signIn.html',
 						controller: 'SignInCtrl as signIn'
+					}
+				}
+			})
+			.state('auth.signUp', {
+				url: '/signUp',
+				views: {
+					'auth': {
+						templateUrl: 'src/10take.auth/signUp/signUp.html',
+						controller: 'SignUpCtrl as signUp'
 					}
 				}
 			})
@@ -32,7 +41,7 @@
 		authProvider.configure({
 			apiUrl:  'http://localhost:3000',
 			storage: 'localStorage',
-			confirmationSuccessUrl: window.location.origin + '/www/index.html#/home'
+			confirmationSuccessUrl: window.location.origin + '/#/tabs/home'
 		});
 	}
 		Config.$inject = ['$stateProvider', '$urlRouterProvider', '$authProvider'];

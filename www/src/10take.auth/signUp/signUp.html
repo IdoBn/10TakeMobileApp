@@ -1,0 +1,17 @@
+<ion-content scroll="false">
+	<div class="list">
+	  <label class="item item-input">
+	    <span class="input-label">Email</span>
+	    <input type="email" ng-model='signUp.user.email'>
+	  </label>
+	  <label class="item item-input">
+	    <span class="input-label">Password</span>
+	    <input type="password" ng-model='signUp.user.password'>
+	  </label>
+	  <label class="item item-input">
+	    <span class="input-label">Password Confirm</span>
+	    <input type="password" ng-model='signUp.user.password_confirmation'>
+	  </label>
+	  <button class='button button-block button-positive' ng-click='signUp.handleSignUp(signUp.user)'>Sign Up</button>
+	</div>
+</ion-content>
