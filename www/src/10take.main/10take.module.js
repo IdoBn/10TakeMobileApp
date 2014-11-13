@@ -17,7 +17,7 @@
 
 
 	function Config(urlRouterProvider) {
-		// urlRouterProvider.otherwise('/tabs');
+		urlRouterProvider.otherwise('/tabs/profile');
 	}
 		Config.$inject = ['$urlRouterProvider'];
 

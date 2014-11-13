@@ -31,6 +31,11 @@
 	  });
 
 
+	  _this.uploadItem = function(item) {
+	  	log.debug('uploading item', item);
+	  };
+
+
 	  ionicPlatform.ready(function() {
 		  _this.takePicture = function() {
 		  	var Camera = navigator.camera;
