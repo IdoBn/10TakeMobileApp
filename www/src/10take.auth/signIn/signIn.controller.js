@@ -9,7 +9,7 @@
 			auth.submitLogin(user)
 				.then(function(resp) {
 					log.debug('resp handle sign in then', resp);
-					state.go('tabs.dash');
+					state.go('tabs.profile');
 				})
 				.catch(function(resp) {
 					log.debug('resp handle sign in catch', resp)

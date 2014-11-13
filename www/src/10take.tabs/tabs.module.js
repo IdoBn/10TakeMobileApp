@@ -26,12 +26,12 @@
 
 	    // Each tab has its own nav history stack:
 
-	    .state('tabs.dash', {
-	      url: '/dash',
+	    .state('tabs.profile', {
+	      url: '/profile',
 	      views: {
-	        'tab-dash': {
-	          templateUrl: 'templates/tab-dash.html',
-	          controller: 'DashCtrl'
+	        'tab-profile': {
+	          templateUrl: 'src/10take.tabs/profile/profile.html',
+	          controller: 'ProfileCtrl as profile'
 	        }
 	      }
 	    })

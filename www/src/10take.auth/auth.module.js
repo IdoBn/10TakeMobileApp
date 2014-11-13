@@ -41,7 +41,7 @@
 		authProvider.configure({
 			apiUrl:  'http://localhost:3000',
 			storage: 'localStorage',
-			confirmationSuccessUrl: window.location.origin + '/#/tabs/home'
+			confirmationSuccessUrl: window.location.origin + '/#/tabs/dash'
 		});
 	}
 		Config.$inject = ['$stateProvider', '$urlRouterProvider', '$authProvider'];
