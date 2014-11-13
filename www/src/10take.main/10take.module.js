@@ -17,13 +17,14 @@
 
 
 	function Config(urlRouterProvider) {
-		// urlRouterProvider.otherwise('/tabs');
+		urlRouterProvider.otherwise('/tabs/profile');
 	}
 		Config.$inject = ['$urlRouterProvider'];
 
 
 	angular.module('10take', [
 		'ionic',
+		'ngCordova',
 		'ng-token-auth',
 		'10take.tabs',
 		'10take.auth',

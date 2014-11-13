@@ -1,11 +1,28 @@
 <ion-modal-view>
   <ion-header-bar>
-    <h1 class="title">My Modal title</h1>
+    <h1 class="title">Upload Item</h1>
     <button class='button' ng-click='profile.closeModal()'>
   	X
   </button>
   </ion-header-bar>
   <ion-content>
-    Hello!
+    
+
+		<div class="list">
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Name</span>
+		    <input type="text" ng-model='profile.item.name' placeholder="The name of your item">
+		  </label>
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Description</span>
+		    <input type="text" ng-model="profile.item.description" placeholder="How would you describe it?">
+		  </label>
+		  <label class="item item-input item-floating-label">
+		    <span class="input-label">Picture</span>
+		     <button ng-click='profile.takePicture()'>take picture its worth 1000 words...</button>
+    		<img ng-src="{{profile.displayImage}}">
+		  </label>
+		  <button class='button button-block button-positive' ng-click='profile.uploadItem(profile.item)'>upload</button>
+		</div>
   </ion-content>
 </ion-modal-view>
