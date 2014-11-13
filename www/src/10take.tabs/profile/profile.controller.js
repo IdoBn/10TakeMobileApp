@@ -1,6 +1,6 @@
 (function() {
 
-	function ProfileCtrl(log, ionicModal, scope, cordovaCamera, ionicPlatform, http) {
+	function ProfileCtrl(log, ionicModal, scope, cordovaCamera, ionicPlatform, http, URL) {
 		log.debug('profile ctrl');
 		var _this = this;
 		_this.item = {};
@@ -43,7 +43,7 @@
 
 	  	http({
 	  		method: 'POST',
-	  		url: 'http://172.20.20.175:3000/items',
+	  		url: URL + items,
 	  		data: formData,
 	  		transformRequest: angular.identity,
 	  		headers: {
@@ -112,7 +112,7 @@
 
 
 	}
-		ProfileCtrl.$inject = ['$log', '$ionicModal', '$scope', '$cordovaCamera', '$ionicPlatform', '$http']
+		ProfileCtrl.$inject = ['$log', '$ionicModal', '$scope', '$cordovaCamera', '$ionicPlatform', '$http', 'URL']
 
 	angular.module('10take.tabs')
 		.controller('ProfileCtrl', ProfileCtrl)

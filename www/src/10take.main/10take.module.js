@@ -33,5 +33,6 @@
 		])
 		.run(Run)
 		.config(Config)
+		.constant('URL','http://172.20.20.175:3000')
 
 }());

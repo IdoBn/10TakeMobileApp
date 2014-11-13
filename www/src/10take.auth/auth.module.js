@@ -3,7 +3,7 @@
 	function Run(rootScope, log, state) {
 		rootScope.$on('$stateChangeError', function() {
 			log.error('route unauthorized');
-			state.go('auth');
+			state.go('auth.signIn');
 		});
 	}
 		Run.$inject = ['$rootScope', '$log', '$state'];
@@ -39,7 +39,7 @@
 		urlRouterProvider.otherwise('/auth/signIn');
 
 		authProvider.configure({
-			apiUrl:  'http://172.20.19.249:3000',
+			apiUrl:  'http://172.20.20.175:3000',
 			storage: 'localStorage',
 			confirmationSuccessUrl: window.location.origin + '/#/tabs/dash'
 		});
