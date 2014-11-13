@@ -27,9 +27,7 @@
 		'ngCordova',
 		'ng-token-auth',
 		'10take.tabs',
-		'10take.auth',
-		'starter.controllers', 
-		'starter.services'
+		'10take.auth'
 		])
 		.run(Run)
 		.config(Config)

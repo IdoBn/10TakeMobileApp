@@ -36,31 +36,31 @@
 	      }
 	    })
 
-	    .state('tabs.friends', {
-	      url: '/friends',
+	    .state('tabs.feed', {
+	      url: '/feed',
 	      views: {
-	        'tab-friends': {
-	          templateUrl: 'templates/tab-friends.html',
-	          controller: 'FriendsCtrl'
+	        'tab-feed': {
+	          templateUrl: 'src/10take.tabs/feed/feed.html',
+	          controller: 'FeedCtrl as feed'
 	        }
 	      }
 	    })
-	    .state('tabs.friend-detail', {
-	      url: '/friend/:friendId',
-	      views: {
-	        'tab-friends': {
-	          templateUrl: 'templates/friend-detail.html',
-	          controller: 'FriendDetailCtrl'
-	        }
-	      }
-	    })
+	    // .state('tabs.friend-detail', {
+	    //   url: '/friend/:friendId',
+	    //   views: {
+	    //     'tab-friends': {
+	    //       templateUrl: 'templates/friend-detail.html',
+	    //       controller: 'FriendDetailCtrl'
+	    //     }
+	    //   }
+	    // })
 
-	    .state('tabs.account', {
-	      url: '/account',
+	    .state('tabs.discover', {
+	      url: '/discover',
 	      views: {
-	        'tab-account': {
-	          templateUrl: 'templates/tab-account.html',
-	          controller: 'AccountCtrl'
+	        'tab-discover': {
+	          templateUrl: 'src/10take.tabs/discover/discover.html',
+	          controller: 'DiscoverCtrl as discover'
 	        }
 	      }
 	    });
