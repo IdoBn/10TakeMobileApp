@@ -24,6 +24,7 @@
 
 	angular.module('10take', [
 		'ionic',
+		'ngCordova',
 		'ng-token-auth',
 		'10take.tabs',
 		'10take.auth',

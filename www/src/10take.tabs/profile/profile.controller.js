@@ -1,9 +1,9 @@
 (function() {
 
-	function ProfileCtrl(log, ionicModal, scope) {
+	function ProfileCtrl(log, ionicModal, scope, cordovaCamera, ionicPlatform) {
 		log.debug('profile ctrl');
 		var _this = this;
-
+		_this.item = {};
 		// modal
 		ionicModal.fromTemplateUrl('src/10take.tabs/profile/modal.html', {
 	    scope: scope,
@@ -31,12 +31,36 @@
 	  });
 
 
+	  ionicPlatform.ready(function() {
+		  _this.takePicture = function() {
+		  	var Camera = navigator.camera;
 
+		    var options = {
+		        quality : 75,
+		        destinationType : Camera.DestinationType.DATA_URL,
+		        sourceType : Camera.PictureSourceType.CAMERA,
+		        allowEdit : true,
+		        encodingType: Camera.EncodingType.JPEG,
+		        targetWidth: 100,
+		        targetHeight: 100,
+		        popoverOptions: CameraPopoverOptions,
+		        saveToPhotoAlbum: false
+		    };
 
+		    cordovaCamera.getPicture(options).then(function(imageData) {
+		      // Success! Image data is here
+		      log.debug('image success', imageData);
+		      _this.item.image = 'data:image/jpeg;base64,' + imageData;
+		    }, function(err) {
+		      // An error occured. Show a message to the user
+		      log.debug('error', err);
+		    });
+		  };
+		});
 
 
 	}
-		ProfileCtrl.$inject = ['$log', '$ionicModal', '$scope']
+		ProfileCtrl.$inject = ['$log', '$ionicModal', '$scope', '$cordovaCamera', '$ionicPlatform']
 
 	angular.module('10take.tabs')
 		.controller('ProfileCtrl', ProfileCtrl)
