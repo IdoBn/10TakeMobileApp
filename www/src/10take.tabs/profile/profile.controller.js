@@ -1,6 +1,6 @@
 (function() {
 
-	function ProfileCtrl(log, ionicModal, scope, cordovaCamera, ionicPlatform) {
+	function ProfileCtrl(log, ionicModal, scope, cordovaCamera, ionicPlatform, http) {
 		log.debug('profile ctrl');
 		var _this = this;
 		_this.item = {};
@@ -33,6 +33,16 @@
 
 	  _this.uploadItem = function(item) {
 	  	log.debug('uploading item', item);
+
+	  	http.post('http://172.20.20.175:3000/items', {
+	  		item: item
+	  	}).
+		  success(function(data, status, headers, config) {
+		    log.debug('data', data);
+		  }).
+		  error(function(data, status, headers, config) {
+		    log.debug('error', data);
+		  });
 	  };
 
 
@@ -65,7 +75,7 @@
 
 
 	}
-		ProfileCtrl.$inject = ['$log', '$ionicModal', '$scope', '$cordovaCamera', '$ionicPlatform']
+		ProfileCtrl.$inject = ['$log', '$ionicModal', '$scope', '$cordovaCamera', '$ionicPlatform', '$http']
 
 	angular.module('10take.tabs')
 		.controller('ProfileCtrl', ProfileCtrl)
