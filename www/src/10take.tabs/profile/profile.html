@@ -2,5 +2,11 @@
 	<ion-content>
 		<h1>profile</h1>
 		<button ng-click='profile.openModal()'>upload</button>
+		<ion-item-list>
+			<ion-item ng-repeat='item in profile.user.items'>
+				{{item.name}}
+				<img class='full-image' ng-src="{{item.image}}">
+			</ion-item>
+		</ion-item-list>
 	</ion-content>	
 </ion-view>

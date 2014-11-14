@@ -1,9 +1,30 @@
 (function() {
 
-	function ProfileCtrl(log, ionicModal, scope, cordovaCamera, ionicPlatform, http, URL, ionicLoading) {
+	function ProfileCtrl(log, ionicModal, scope, cordovaCamera, ionicPlatform, http, URL, ionicLoading, Users, auth) {
+
 		log.debug('profile ctrl');
 		var _this = this;
 		_this.item = {};
+
+
+
+
+
+		Users.find(auth.user.id).then(function(data) {
+			// success
+			_this.user = data.user;
+		}, function(data) {
+			// error
+		})
+
+
+
+
+
+
+
+
+
 		// modal
 		ionicModal.fromTemplateUrl('src/10take.tabs/profile/modal.html', {
 	    scope: scope,
@@ -119,7 +140,7 @@
 
 
 	}
-		ProfileCtrl.$inject = ['$log', '$ionicModal', '$scope', '$cordovaCamera', '$ionicPlatform', '$http', 'URL', '$ionicLoading']
+		ProfileCtrl.$inject = ['$log', '$ionicModal', '$scope', '$cordovaCamera', '$ionicPlatform', '$http', 'URL', '$ionicLoading', 'Users', '$auth']
 
 	angular.module('10take.tabs')
 		.controller('ProfileCtrl', ProfileCtrl)
