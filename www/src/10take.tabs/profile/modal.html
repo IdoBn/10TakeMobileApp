@@ -4,17 +4,17 @@
 	  	Exit
 	  </button>
     <h1 class="title">Upload Item</h1>
-    <button class='button button-clear button-positive' ng-click='profile.uploadItem(profile.item)'>Upload</span></button>
+    <button class='button button-clear button-positive' ng-disabled='!profile.itemForm.$valid || !profile.displayImage' ng-click='profile.uploadItem(profile.item)'>Upload</span></button>
   </ion-header-bar>
   <ion-content scroll='false'>
-		<div class="list">
+		<form name='profile.itemForm' class="list">
 		  <label class="item item-input item-floating-label">
 		    <span class="input-label">Name</span>
-		    <input type="text" ng-model='profile.item.name' placeholder="The name of your item">
+		    <input name='name' type="text" required ng-model='profile.item.name' placeholder="The name of your item">
 		  </label>
 		  <label class="item item-input item-floating-label">
 		    <span class="input-label">Description</span>
-		    <input type="text" ng-model="profile.item.description" placeholder="How would you describe it?">
+		    <input name='description' type="text" required ng-model="profile.item.description" placeholder="How would you describe it?">
 		  </label>
 		  <label class="item item-input item-floating-label">
 		    <span class="input-label">Picture</span>
@@ -27,6 +27,6 @@
   				 			class='full-image'>
   			</div>
 		  </label>
-		</div>
+		</form>
   </ion-content>
 </ion-modal-view>
