@@ -7,10 +7,17 @@
 <ion-view title='Profile'>
 	<ion-content>
 		<ion-item-list>
-			<ion-item ng-repeat='item in profile.user.items'>
-				{{item.name}}
-				<img class='full-image' ng-src="{{item.image}}">
-			</ion-item>
+			<div detect-gestures gesture-type="doubletap" call-back='discover.reportEvent' class="itemContainer" ng-repeat='item in profile.user.items'>
+					<img ng-src="{{item.image}}" class="full-image itemImage">	
+					<div class="hidden itemInfo">
+						<div class="itemName">
+							<h3>{{item.name}}</h3>
+						</div>
+						<div class="itemDesc">
+							<p>{{item.description}}</p>
+						</div>
+					</div>	
+				</div>
 		</ion-item-list>
 	</ion-content>	
 </ion-view>
