@@ -1,0 +1,20 @@
+.itemContainer{
+	position: relative;	
+	border-radius: 10px;
+	margin-bottom: 4%;
+	background-color: rgba(0, 0, 0, .04);
+}
+
+.myCon{
+}
+
+.itemImage{
+	border-radius: 10px;
+}
+
+.itemInfo{
+	position:absolute;
+	top: 1em;
+	left: 3em;
+	overflow: hidden;
+}
