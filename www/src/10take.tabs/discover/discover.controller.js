@@ -1,9 +1,17 @@
 (function() {
 
-	function DiscoverCtrl() {
+	function DiscoverCtrl(Items) {
+		var _this = this;
 
+		Items.all().then(function(data) {
+			//success
+			_this.items = data.items
+			console.log(_this.items);
+		},function(err) {
+			//error
+		})
 	}
-		DiscoverCtrl.$inject = [];
+		DiscoverCtrl.$inject = ['Items'];
 
 
 	angular.module('10take.tabs')
