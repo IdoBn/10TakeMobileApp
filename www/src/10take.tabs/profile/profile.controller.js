@@ -1,6 +1,6 @@
 (function() {
 
-	function ProfileCtrl(log, ionicModal, scope, cordovaCamera, ionicPlatform, http, URL) {
+	function ProfileCtrl(log, ionicModal, scope, cordovaCamera, ionicPlatform, http, URL, ionicLoading) {
 		log.debug('profile ctrl');
 		var _this = this;
 		_this.item = {};
@@ -32,6 +32,10 @@
 
 
 	  _this.uploadItem = function(item) {
+	  	ionicLoading.show({
+      	template: 'Loading...'
+    	});
+
 	  	log.debug('uploading item', item);
 
 	  	var image = b64toBlob(item.image);
@@ -43,7 +47,7 @@
 
 	  	http({
 	  		method: 'POST',
-	  		url: URL + items,
+	  		url: URL + '/items',
 	  		data: formData,
 	  		transformRequest: angular.identity,
 	  		headers: {
@@ -51,8 +55,11 @@
 	  		}
 	  	}).success(function(data, status, headers, config) {
 		    log.debug('data', data);
+		    _this.modal.hide();
+		    ionicLoading.hide();
 		  }).error(function(data, status, headers, config) {
 		    log.debug('error', data);
+		    ionicLoading.hide();
 		  });
 	  };
 
@@ -92,8 +99,8 @@
 		        sourceType : Camera.PictureSourceType.CAMERA,
 		        allowEdit : true,
 		        encodingType: Camera.EncodingType.JPEG,
-		        targetWidth: 100,
-		        targetHeight: 100,
+		        targetWidth: 500,
+		        targetHeight: 500,
 		        popoverOptions: CameraPopoverOptions,
 		        saveToPhotoAlbum: false
 		    };
@@ -112,7 +119,7 @@
 
 
 	}
-		ProfileCtrl.$inject = ['$log', '$ionicModal', '$scope', '$cordovaCamera', '$ionicPlatform', '$http', 'URL']
+		ProfileCtrl.$inject = ['$log', '$ionicModal', '$scope', '$cordovaCamera', '$ionicPlatform', '$http', 'URL', '$ionicLoading']
 
 	angular.module('10take.tabs')
 		.controller('ProfileCtrl', ProfileCtrl)

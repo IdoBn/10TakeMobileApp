@@ -1,13 +1,12 @@
 <ion-modal-view>
   <ion-header-bar>
+	  <button class='button button-clear'ng-click='profile.closeModal()'>
+	  	Exit
+	  </button>
     <h1 class="title">Upload Item</h1>
-    <button class='button' ng-click='profile.closeModal()'>
-  	X
-  </button>
+    <button class='button button-clear button-positive' ng-click='profile.uploadItem(profile.item)'>Upload</span></button>
   </ion-header-bar>
-  <ion-content>
-    
-
+  <ion-content scroll='false'>
 		<div class="list">
 		  <label class="item item-input item-floating-label">
 		    <span class="input-label">Name</span>
@@ -19,10 +18,15 @@
 		  </label>
 		  <label class="item item-input item-floating-label">
 		    <span class="input-label">Picture</span>
-		     <button ng-click='profile.takePicture()'>take picture its worth 1000 words...</button>
-    		<img ng-src="{{profile.displayImage}}">
+		     <button ng-if='profile.displayImage == undefined' 
+		     				class='button button-clear button-full button-positive' 
+		     				icon='icon ion-camera' 
+		     				ng-click='profile.takePicture()'>picture == 1000 words...</button>
+	    	<div ng-if='profile.displayImage !== undefinded' class="item item-body">
+  				<img ng-src="{{profile.displayImage}}"
+  				 			class='full-image'>
+  			</div>
 		  </label>
-		  <button class='button button-block button-positive' ng-click='profile.uploadItem(profile.item)'>upload</button>
 		</div>
   </ion-content>
 </ion-modal-view>
