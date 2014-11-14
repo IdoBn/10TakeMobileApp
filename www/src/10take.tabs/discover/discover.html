@@ -2,15 +2,16 @@
   <ion-content class="padding">
     <div class="myCon">
 			<div>
-				<div class="itemContainer" ng-repeat='item in discover.items' ng-click='discover.borrowItem(item.id)'>
-					<img ng-src="{{item.image}}" class="full-image itemImage">
-					<div class="itemInfo">
+				<div detect-gestures gesture-type="doubletap" call-back='discover.reportEvent' class="itemContainer" ng-repeat='item in discover.items'>
+					<img ng-src="{{item.image}}" class="full-image itemImage">	
+					<div class="hidden itemInfo">
 						<div class="itemName">
 							<h3>{{item.name}}</h3>
 						</div>
 						<div class="itemDesc">
 							<p>{{item.description}}</p>
 						</div>
+						<button class='button button-block button-positive'>Borrow!</button>
 					</div>	
 				</div>	
 			</div>

@@ -8,6 +8,15 @@
 .myCon{
 }
 
+.hidden {
+	display: none;
+}
+
+.double-tap {
+	/*animation: shake 2s;*/
+	opacity: 0.5;
+}
+
 .itemImage{
 	border-radius: 10px;
 }

@@ -28,7 +28,8 @@
 		'ng-token-auth',
 		'10take.tabs',
 		'10take.auth',
-		'10take.services'
+		'10take.services',
+		'10take.directives'
 		])
 		.run(Run)
 		.config(Config)

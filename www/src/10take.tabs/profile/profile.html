@@ -1,7 +1,11 @@
+<ion-nav-buttons side="right">
+  <button class="button button-clear button-positive"
+  			 	ng-click='profile.openModal()'>
+    Upload
+  </button>
+</ion-nav-buttons>
 <ion-view title='Profile'>
 	<ion-content>
-		<h1>profile</h1>
-		<button ng-click='profile.openModal()'>upload</button>
 		<ion-item-list>
 			<ion-item ng-repeat='item in profile.user.items'>
 				{{item.name}}

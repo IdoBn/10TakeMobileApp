@@ -1,4 +1,10 @@
-<ion-content scroll="false">
+<ion-nav-buttons side="right" back='false'>
+  <button class="button button-clear" ui-sref='auth.signUp'>
+    Sign Up
+  </button>
+</ion-nav-buttons>
+<ion-content scroll="false" hide-
+                -button='false'>
   <div class="list">
 	  <label class="item item-input">
 	    <span class="input-label">Email</span>
@@ -10,6 +16,6 @@
 	  </label>
 	  <button class='button button-block button-positive' ng-click='signIn.handleSignIn(signIn.user)'>Sign In</button>
 	</div>
-	<a ui-sref="auth.signUp">Or sign up...</a>
+	<!-- <button class='button-block button' ui-sref="auth.signUp">Or sign up...</button> -->
 </ion-content>
 

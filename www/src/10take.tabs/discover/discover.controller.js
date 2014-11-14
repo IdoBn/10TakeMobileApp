@@ -1,7 +1,13 @@
 (function() {
 
-	function DiscoverCtrl(Items, Borrows) {
+	function DiscoverCtrl(Items, Borrows, log) {
 		var _this = this;
+
+
+		_this.reportEvent = function(e)  {
+	    // log.debug('Reporting : ' + event.type);
+	    // item.itemInfo = true;
+	  }
 
 		Items.all().then(function(data) {
 			//success
@@ -18,7 +24,7 @@
 			});
 		};
 	}
-		DiscoverCtrl.$inject = ['Items', 'Borrows'];
+		DiscoverCtrl.$inject = ['Items', 'Borrows', '$log'];
 
 
 	angular.module('10take.tabs')
