@@ -2,7 +2,7 @@
   <ion-content class="padding">
     <div class="myCon">
 			<div>
-				<div class="itemContainer" ng-repeat='item in discover.items'>
+				<div class="itemContainer" ng-repeat='item in discover.items' ng-click='discover.borrowItem(item.id)'>
 					<img ng-src="{{item.image}}" class="full-image itemImage">
 					<div class="itemInfo">
 						<div class="itemName">
