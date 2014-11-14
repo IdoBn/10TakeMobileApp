@@ -55,6 +55,7 @@
 
 	  	var formData = new FormData();
 	  	formData.append('item[name]', item.name);
+	  	formData.append('item[value]', item.value);
 	  	formData.append('item[description]', item.description);
 	  	formData.append('item[image]', image);
 
