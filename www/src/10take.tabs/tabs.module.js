@@ -36,15 +36,37 @@
 	      }
 	    })
 
-	    .state('tabs.feed', {
-	      url: '/feed',
-	      views: {
-	        'tab-feed': {
-	          templateUrl: 'src/10take.tabs/feed/feed.html',
-	          controller: 'FeedCtrl as feed'
-	        }
-	      }
+
+	    .state('tabs.borrows', {
+	    	url: '/borrows',
+	    	views: {
+	    		'tab-borrows': {
+	    			templateUrl: 'src/10take.tabs/borrows/borrows.html',
+	    			controller: 'BorrowsCtrl as borrows'
+	    		}
+	    	}
 	    })
+
+
+	    .state('tabs.lends', {
+	    	url: '/lends',
+	    	views: {
+	    		'tab-lends': {
+	    			templateUrl: 'src/10take.tabs/lends/lends.html',
+	    			controller: 'LendsCtrl as lends'
+	    		}
+	    	}
+	    })
+
+	    // .state('tabs.feed', {
+	    //   url: '/feed',
+	    //   views: {
+	    //     'tab-feed': {
+	    //       templateUrl: 'src/10take.tabs/feed/feed.html',
+	    //       controller: 'FeedCtrl as feed'
+	    //     }
+	    //   }
+	    // })
 	    // .state('tabs.friend-detail', {
 	    //   url: '/friend/:friendId',
 	    //   views: {
