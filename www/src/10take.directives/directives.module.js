@@ -1,6 +1,21 @@
 (function() {
 
 	angular.module('10take.directives', ['ngAnimate'])
+
+
+	.directive('bckImg', function() {
+		return function(scope, element, attrs) {
+			var url = attrs.backImg;
+			element.css({
+				'background-image': 'url(' + url + ')',
+				'background-size' : 'cover'
+			});
+		}
+	})
+
+
+
+
 	.directive('detectGestures', function($ionicGesture) {
 	 	return {
 	    restrict :  'A',
