@@ -9,9 +9,7 @@
 
 			var defer = q.defer();
 
-			http.put(URL + '/hand_offs', {
-				id: handOff_id
-			}).success(function(data) {
+			http.put(URL + '/hand_offs/' + handOff_id).success(function(data) {
 				log.debug('hand_off nextStep', data)
 				defer.resolve(data);
 				ionicLoading.hide();

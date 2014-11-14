@@ -2,7 +2,16 @@
 	<ion-content>
 		<h1>lends</h1>
 		<ion-item-list>
-			<ion-item ng-repeat='borrow in lends.borrows'>{{borrow.item.name}}</ion-item>
+			<ion-item ng-repeat='borrow in lends.borrows'>
+				{{borrow.item.name}}
+				<div ng-if='borrow.hand_off !== null'>
+						{{borrow.hand_off.status}}
+						<button ng-click='lends.handleNextStep(borrow.hand_off.id)' 
+								ng-if="borrow.hand_off.status % 2 == 1">
+						Next Step
+					</button>
+				</div>
+			</ion-item>
 		</ion-item-list>
 	</ion-content>
 </ion-view>

@@ -15,8 +15,17 @@
 				// success
 			}, function(data) {
 				// error
-			})
-		}
+			});
+		};
+
+		this.handleNextStep = function(handOff_id) {
+			log.debug(handOff_id);
+			HandOff.nextStep(handOff_id).then(function(data) {
+				// success
+			}, function(data) {
+				// error
+			});
+		};
 	}	
 		BorrowsCtrl.$inject = ['$log', 'Borrows', '$auth', 'HandOff'];
 
