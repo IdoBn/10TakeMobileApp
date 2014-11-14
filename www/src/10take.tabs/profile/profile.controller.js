@@ -42,14 +42,6 @@
 	  scope.$on('$destroy', function() {
 	   	_this.modal.remove();
 	  });
-	  // Execute action on hide modal
-	  scope.$on('modal.hidden', function() {
-	    // Execute action
-	  });
-	  // Execute action on remove modal
-	  scope.$on('modal.removed', function() {
-	    // Execute action
-	  });
 
 
 	  _this.uploadItem = function(item) {

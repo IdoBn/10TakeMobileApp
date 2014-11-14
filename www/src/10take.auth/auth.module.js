@@ -39,7 +39,7 @@
 		urlRouterProvider.otherwise('/auth/signIn');
 
 		authProvider.configure({
-			apiUrl:  'http://172.20.20.175:3000',
+			apiUrl:  'http://api.10take.com',
 			storage: 'localStorage',
 			confirmationSuccessUrl: window.location.origin + '/#/tabs/dash'
 		});
