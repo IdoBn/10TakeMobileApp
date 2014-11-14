@@ -19,7 +19,7 @@
 
 
 
-
+		_this.reportEvent = function(e) {};
 
 
 
