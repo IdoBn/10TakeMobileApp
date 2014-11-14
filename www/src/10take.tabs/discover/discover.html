@@ -1,7 +1,11 @@
 <ion-view title="Discover">
   <ion-content class="padding">
     <ion-list>
-			<ion-item ng-repeat='item in discover.items'>{{item.id}}</ion-item>
+			<ion-item ng-repeat='item in discover.items'>
+				<div class="itemName">
+					{{item.name}}
+				</div>	
+			</ion-item>
   	</ion-list>
   </ion-content>
 </ion-view>
